@@ -1,5 +1,5 @@
 import { ComputedRef, Ref, ref, computed } from "@vue/reactivity";
-/** dts2md break */
+
 /**
  * Type of dictionaries.
  */
