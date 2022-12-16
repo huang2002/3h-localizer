@@ -1,6 +1,6 @@
 # 3h-localizer
 
-> A utility lib for language switch in vue.
+> A utility lib for localization in vue.
 
 ## Example Usage
 

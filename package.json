@@ -1,7 +1,7 @@
 {
   "name": "3h-localizer",
   "version": "0.1.0",
-  "description": "A utility lib for language switch in vue.",
+  "description": "A utility lib for localization in vue.",
   "type": "module",
   "module": "./dist/3h-localizer.min.js",
   "main": "./dist/3h-localizer.umd.min.js",
@@ -16,13 +16,13 @@
   },
   "repository": "huang2002/3h-localizer",
   "keywords": [
-    "dict",
-    "i18n",
     "l10n",
+    "localization",
+    "i18n",
     "intl",
     "internationalization",
     "language",
-    "switch",
+    "dict",
     "select",
     "vue",
     "3h"
