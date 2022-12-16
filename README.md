@@ -19,7 +19,7 @@ is controlled by selected language.
 </template>
 
 <script setup lang="ts">
-import { LanguageSwitch } from '3h-dict';
+import { Localizer, translationsToDicts, type Translations } from '3h-dict';
 
 interface MyDict {
     HELLO_WORLD: string;
@@ -27,19 +27,19 @@ interface MyDict {
 
 type MyLanguages = 'zh' | 'en';
 
-const languageSwitch = new LanguageSwitch<MyDict, MyLanguages>({
-    defaultLanguage: 'en',
-    dicts: {
-        zh: {
-            HELLO_WORLD: '你好，世界！',
-        },
-        en: {
-            HELLO_WORLD: 'Hello, world!',
-        },
+const translations: Translations<MyDict, MyLanguages> = {
+    HELLO_WORLD: {
+        zh: '你好，世界！',
+        en: 'Hello, world!',
     },
+};
+
+const localizer = new Localizer<MyDict, MyLanguages>({
+    defaultLanguage: 'en',
+    dicts: translationsToDicts(translations),
 });
 
-const { language, dict } = languageSwitch;
+const { language, dict } = localizer;
 </script>
 ```
 
