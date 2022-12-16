@@ -1,6 +1,6 @@
 {
   "name": "3h-localizer",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A utility lib for localization in vue.",
   "type": "module",
   "module": "./dist/3h-localizer.min.js",
