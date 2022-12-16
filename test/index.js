@@ -4,7 +4,20 @@
 // @ts-ignore
 const { defineComponent, createApp } = /** @type {import('vue')} */(Vue);
 
-const dicts = HD.translationsToDicts({
+/**
+ * @typedef MyDict
+ * @property {string} CHOOSE_LANGUAGE
+ * @property {string} HELLO_WORLD
+ */
+
+/**
+ * @typedef {'zh' | 'en'} MyLanguages
+ */
+
+/**
+ * @type {HD.Translations<MyDict, MyLanguages>}
+ */
+const translations = {
     CHOOSE_LANGUAGE: {
         zh: '选择语言：',
         en: 'Choose language: ',
@@ -13,14 +26,14 @@ const dicts = HD.translationsToDicts({
         zh: '你好，世界！',
         en: 'Hello, world!',
     },
-});
+};
 
 const localizer = new HD.Localizer({
     /**
-     * @type {'zh' | 'en'}
+     * @type {MyLanguages}
      */
     defaultLanguage: 'en',
-    dicts,
+    dicts: HD.translationsToDicts(translations),
 });
 
 const App = defineComponent({
