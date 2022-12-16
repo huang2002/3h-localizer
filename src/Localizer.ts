@@ -1,19 +1,10 @@
 import { ComputedRef, Ref, ref, computed } from "@vue/reactivity";
+import { Dict, DictName } from "./dict";
 
 /**
- * Type of dictionaries.
+ * Type of options for {@link Localizer}.
  */
-export type Dict = Record<string | symbol, string>;
-/** dts2md break */
-/**
- * Type of dictionary names.
- */
-export type DictName = string | symbol;
-/** dts2md break */
-/**
- * Type of options for {@link LanguageSwitch}.
- */
-export interface LanguageSwitchOptions<
+export interface LocalizerOptions<
     DictType extends Dict = Dict,
     DictNameType extends DictName = DictName,
 > {
@@ -22,18 +13,18 @@ export interface LanguageSwitchOptions<
 }
 /** dts2md break */
 /**
- * Class of language switch managers.
+ * Class of localizers.
  */
-export class LanguageSwitch<
+export class Localizer<
     DictType extends Dict = Dict,
     DictNameType extends DictName = DictName,
 > {
     /** dts2md break */
     /**
-     * Constructor of {@link LanguageSwitch}.
+     * Constructor of {@link Localizer}.
      */
     constructor(
-        options: LanguageSwitchOptions<DictType, DictNameType>,
+        options: LocalizerOptions<DictType, DictNameType>,
     ) {
 
         this.dicts = Object.assign(
@@ -88,9 +79,9 @@ export class LanguageSwitch<
      *
      * @example
      * ```js
-     * languageSwitch.dicts = {
+     * localizers.dicts = {
      *     'en-US': {
-     *         HELLO: 'hello!',
+     *         HELLO: 'Hello!',
      *     },
      *     'zh-CN': {
      *         HELLO: '你好！',
