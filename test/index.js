@@ -15,7 +15,7 @@ const { defineComponent, createApp } = /** @type {import('vue')} */(Vue);
  */
 
 /**
- * @type {HD.Translations<MyDict, MyLanguages>}
+ * @type {HL.Translations<MyDict, MyLanguages>}
  */
 const translations = {
     CHOOSE_LANGUAGE: {
@@ -28,12 +28,12 @@ const translations = {
     },
 };
 
-const localizer = new HD.Localizer({
+const localizer = new HL.Localizer({
     /**
      * @type {MyLanguages}
      */
     defaultLanguage: 'en',
-    dicts: HD.translationsToDicts(translations),
+    dicts: HL.translationsToDicts(translations),
 });
 
 const App = defineComponent({

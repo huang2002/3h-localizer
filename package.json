@@ -1,20 +1,20 @@
 {
-  "name": "3h-dict",
+  "name": "3h-localizer",
   "version": "0.1.0",
   "description": "A utility lib for language switch in vue.",
   "type": "module",
-  "module": "./dist/3h-dict.min.js",
-  "main": "./dist/3h-dict.umd.min.js",
+  "module": "./dist/3h-localizer.min.js",
+  "main": "./dist/3h-localizer.umd.min.js",
   "types": "./index.d.ts",
   "author": "hhh",
   "license": "MIT",
   "scripts": {
     "prebuild": "tsc",
     "build": "rollup -c",
-    "postbuild": "terser dist/3h-dict.js --config-file terser.json --module -o dist/3h-dict.min.js && terser dist/3h-dict.umd.js --config-file terser.json -o dist/3h-dict.umd.min.js && node stat.cjs",
+    "postbuild": "terser dist/3h-localizer.js --config-file terser.json --module -o dist/3h-localizer.min.js && terser dist/3h-localizer.umd.js --config-file terser.json -o dist/3h-localizer.umd.min.js && node stat.cjs",
     "docs": "dts2md \"**\" \"!index.d.ts\" -i ./types -o ./docs -l -I Home.md"
   },
-  "repository": "huang2002/3h-dict",
+  "repository": "huang2002/3h-localizer",
   "keywords": [
     "dict",
     "i18n",

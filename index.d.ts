@@ -1,3 +1,3 @@
-export as namespace HD;
+export as namespace HL;
 
 export * from "./types/index";

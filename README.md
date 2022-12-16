@@ -1,4 +1,4 @@
-# 3h-dict
+# 3h-localizer
 
 > A utility lib for language switch in vue.
 
@@ -19,7 +19,7 @@ is controlled by selected language.
 </template>
 
 <script setup lang="ts">
-import { Localizer, translationsToDicts, type Translations } from '3h-dict';
+import { Localizer, translationsToDicts, type Translations } from '3h-localizer';
 
 interface MyDict {
     HELLO_WORLD: string;
@@ -45,6 +45,6 @@ const { language, dict } = localizer;
 
 ## Links
 
-- [API Reference](https://github.com/huang2002/3h-dict/wiki)
+- [API Reference](https://github.com/huang2002/3h-localizer/wiki)
 - [Changelog](./CHANGELOG.md)
 - [License (MIT)](./LICENSE)
