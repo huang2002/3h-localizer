@@ -79,7 +79,7 @@ export class Localizer<
      *
      * @example
      * ```js
-     * localizers.dicts = {
+     * localizer.dicts = {
      *     'en-US': {
      *         HELLO: 'Hello!',
      *     },
