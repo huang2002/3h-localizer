@@ -21,9 +21,9 @@ is controlled by selected language.
 <script setup lang="ts">
 import { Localizer, translationsToDicts, type Translations } from '3h-localizer';
 
-interface MyDict {
+type MyDict = {
     HELLO_WORLD: string;
-}
+};
 
 type MyLanguages = 'zh' | 'en';
 
