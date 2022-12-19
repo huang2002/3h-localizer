@@ -3,13 +3,17 @@ import { Dict, DictName } from "./dict";
 
 /**
  * Type of options for {@link Localizer}.
+ * (One of `defaultLanguage` and `language`
+ * must be provided; if both are present,
+ * `language` takes precedence.)
  */
 export interface LocalizerOptions<
     DictType extends Dict = Dict,
     DictNameType extends DictName = DictName,
 > {
     dicts: Record<DictNameType, DictType>;
-    defaultLanguage: DictNameType;
+    defaultLanguage?: DictNameType;
+    language?: Ref<DictNameType>;
 }
 /** dts2md break */
 /**
@@ -32,9 +36,21 @@ export class Localizer<
             options.dicts,
         );
 
-        this.defaultLanguage = options.defaultLanguage;
+        if (options.language) {
+            this.language = options.language;
+            this.defaultLanguage = options.language.value;
+        } else if (options.defaultLanguage) {
+            this.defaultLanguage = options.defaultLanguage;
+            this.language = ref(options.defaultLanguage) as Ref<DictNameType>;
+        } else {
+            throw new Error(
+                'one of `defaultLanguage` and `language` must be provided'
+            );
+        }
 
-        this.language = ref(options.defaultLanguage) as Ref<DictNameType>;
+        if (!(this.defaultLanguage in this.dicts)) {
+            throw new Error('invalid default language');
+        }
 
         this.dict = computed(() => {
             const { language, dicts } = this;
