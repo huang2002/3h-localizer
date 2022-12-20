@@ -12,6 +12,7 @@
     "prebuild": "tsc",
     "build": "rollup -c",
     "postbuild": "terser dist/3h-localizer.mjs --config-file terser.json --module -o dist/3h-localizer.min.mjs && terser dist/3h-localizer.umd.cjs --config-file terser.json -o dist/3h-localizer.umd.min.cjs && node stat.cjs",
+    "test": "node test/test.cjs",
     "docs": "dts2md \"**\" \"!index.d.ts\" -i ./types -o ./docs -l -I Home.md"
   },
   "repository": "huang2002/3h-localizer",
@@ -36,6 +37,7 @@
     "@babel/core": "^7.17.0",
     "@babel/preset-env": "^7.16.0",
     "@rollup/plugin-babel": "^6.0.0",
+    "3h-test": "^0.9.0",
     "dts2md": "^0.4.0",
     "rollup": "^3.7.0",
     "terser": "^5.16.0",
