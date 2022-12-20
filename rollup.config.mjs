@@ -23,7 +23,7 @@ export default defineConfig([
         output: {
             format: 'umd',
             name: 'HL',
-            file: './dist/3h-localizer.umd.js',
+            file: './dist/3h-localizer.umd.cjs',
             globals: {
                 '@vue/reactivity': 'Vue',
             },
@@ -34,7 +34,7 @@ export default defineConfig([
         external,
         output: {
             format: 'esm',
-            file: './dist/3h-localizer.js',
+            file: './dist/3h-localizer.mjs',
         },
     },
 ]);
